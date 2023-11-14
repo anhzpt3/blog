@@ -65,7 +65,27 @@ body {
   animation: bounce 0.5s linear infinite;
   animation-play-state: paused;
 }
+.infoHolder_content{
+  color: #ffffff ;
+}
+a{
+  text-decoration: none;
+}
+p a {
+  color: black;
+}
+.Social_content p {
+  display: inline;
+  margin-left: 1%;
+}
 
+#Paris div{
+  float: left; margin: 100px;
+}
+.QRcode{
+  width: 25%;
+  height: auto;;
+}
 .profile h1 {
   font-family: 'Fjalla One', sans-serif;
   color: #d10606;

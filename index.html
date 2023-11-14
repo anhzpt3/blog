@@ -4,7 +4,7 @@
   href="https://scontent.fhan14-4.fna.fbcdn.net/v/t39.30808-6/239508366_2662132224090428_5088639679981924800_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=5f2048&_nc_ohc=t5d9WwyNz9sAX9nsDIQ&_nc_ht=scontent.fhan14-4.fna&oh=00_AfCD6aFtETYG0YKB4BICyMuBwBCibSRO3GZIPUqDuZ_-Kw&oe=65592391" />
 
 <head>
-  <title>My Page</title>
+  <title>anhzpt3</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
@@ -16,26 +16,32 @@
     <div class="menu">
       <div class="tab">
         <button class="tablinks" onclick="openCity(event, 'home')"><i class="fa fa-home"></i></button>
-        <button class="tablinks" onclick="openCity(event, 'London')">Social network</button>
-        <button class="tablinks" onclick="openCity(event, 'Paris')">Paris</button>
-        <button class="tablinks" onclick="openCity(event, 'Khunglong')">Khủng Long ?</button>
+        <button class="tablinks" onclick="openCity(event, 'Social')">Social network</button>
+        <button class="tablinks" onclick="openCity(event, 'Paris')">Pay method</button>
+        <button class="tablinks" onclick="openCity(event, 'Khunglong')">Công viên kỉ Jura</button>
+        <button class="tablinks" onclick="openCity(event, 'Calculator')">Máy tính tuổi thông minh</button>
       </div>
 
       <!-- Tab content -->
       <div id="home">
+        <!-- // -->
       </div>
-      <div id="London" class="tabcontent">
+      <div id="Social" class="tabcontent">
         <h3>Social network</h3>
-        <p><a href="https://www.facebook.com/qncphomie" target=”_blank><i class="fa fa-facebook-official"></i></a></p>
-        <p><a href="https://www.youtube.com/@theanhdepptry0201/featured" target=”_blank></a><i
-            class="fa fa-youtube-play"></i></a></p>
-        <p></p>
-        <p></p>
+        <div class="Social_content">
+          <p><a href="https://www.facebook.com/qncphomie" target=”_blank><i class="fa fa-facebook-official"></i> FaceBook</a> </p>
+          <p><a href="https://www.youtube.com/@theanhdepptry0201/featured" target=”_blank><i class="fa fa-youtube-play"></i> Zootobe</a></p>
+          <p><a href="https://github.com/anhzpt3" target=”_blank><i class="fa fa-github"></i> Github</a></p>
+          <p><a href="https://steamcommunity.com/profiles/76561198442944138/" target=”_blank><i class="fa fa-steam-square"></i> Steam</a></p>
+        </div>
       </div>
 
       <div id="Paris" class="tabcontent">
-        <h3>Paris</h3>
-        <p>Paris is the capital of France.</p>
+        <div>
+          <h3>Đang xài BIDV</h3>
+          <p>STK:2890367763 Hoàng Thế Anh</p>
+        </div>  
+        <img class="QRcode" src="https://lh3.googleusercontent.com/pw/ADCreHdEVaKU1Sx1QaFXi0lLKRytYOJK9Aa2KyC3kSPSvTblTx50uHqvm7JYv6Xk9wfNDPPGpUBHPkFqHPXX2yxbTKv0GxG2aEQcBP5Z7cA_TAV3SMU14UY7sRj4b3TneSlpW2aghtEL8HdzZRQCXEmJ6wYk=w471-h941-s-no-gm?authuser=0" alt="">
       </div>
 
       <div id="Khunglong" class="tabcontent">
@@ -45,12 +51,22 @@
           <br>
         </div>
       </div>
+
+      <div id="Calculator" class="tabcontent">
+        
+          <h3>Máy tính tuổi thông minh (credit:ditmewibu.com)</h3>
+          <p>Nhập tuổi của bạn</p>
+          <input type="text" onfocus="this.value=''" onchange="mod();" id="age_e">
+          <p id="age_a"></p>
+          <button id="nut_adawdawdawdawdawd" onclick="age()">Tính tuổi của bạn</button>
+      </div>
     </div>
     <!-- /// -->
     <h1>Hover Me</h1>
     <div class="infoHolder">
-      <h2>Hoàng Thế Anh</h2>
-      <p>
+      <h2>Lời Nói Đầu</h2>
+      <p class="infoHolder_content">
+        Không thể nhầm được, đây đúng là webstatic của chúng tôi ( thực ra là 1 thằng ) tạo ra vì tôi đang rảnh vãi cl, mục đích đơn giản là làm up những thứ nó thích với lượng kiến thức một mẩu về html và css, còn đoạn text tiếp theo ai mà đọc thì đúng là vãi c.
         Lorem ipsum dolor sit amet, metus convallis ut malesuada, qui semper,
         at non. Tincidunt donec aliquam vestibulum nisl. Pulvinar curabitur
         tellus, a sed sit vitae morbi. Suscipit saepe et praesent aenean
@@ -123,5 +139,29 @@
   });
 
 </script>
-
+<script>
+  var inc = 0, inb = 0;
+  function mod() { inb = inc = 0 } 
+  function age() { 
+    var n = document.getElementById("age_e").value, e = n + " là tuổi clgt???"; 
+    if (0 == document.getElementById("age_e").value.length || isNaN(n)) 
+    if (0 == document.getElementById("age_e").value.length) document.getElementById("age_a").innerHTML = "Chưa nhập gì hết.";
+    else { 
+      switch (inc) {
+        case 0: document.getElementById("age_a").innerHTML = e; 
+          break; 
+        case 1: document.getElementById("age_a").innerHTML = "Đây là lần thứ 2 rồi nhưng bạn vẫn nhập sai."; 
+          break;
+        case 2: document.getElementById("age_a").innerHTML = "Thật ra bạn chỉ bấm cái nút này cho vui thôi phải không?" 
+      }
+      inc++ 
+    } 
+    else 0 == inb ? (document.getElementById("age_a").innerHTML = "Bạn đã " + n + " tuổi rồi.", inc = 0) : document.getElementById("age_a").innerHTML = "Bạn đã nhấn cái nút này " + inb + " lần, tuổi của bạn vẫn là " + n, 
+      inb++; 
+    if (3 < inc) for (var t = 0; t <= inc; t++)document.getElementById("age_a").innerHTML = " đừng có nhấn nữa".repeat(t); 
+    6 == inc && (document.getElementById("age_a").innerHTML = "nhấn thêm lần nữa xem?"), 
+    7 == inc && (document.getElementById("age_a").innerHTML = "chắc chưa?", document.getElementById("nut_adawdawdawdawdawd").innerHTML = "chắc."), 
+    7 < inc && (window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ") 
+  }
+</script>
 </html>
