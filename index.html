@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<link rel="shortcut icon" type="image/png"
+  href="https://scontent.fhan14-4.fna.fbcdn.net/v/t39.30808-6/239508366_2662132224090428_5088639679981924800_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=5f2048&_nc_ohc=t5d9WwyNz9sAX9nsDIQ&_nc_ht=scontent.fhan14-4.fna&oh=00_AfCD6aFtETYG0YKB4BICyMuBwBCibSRO3GZIPUqDuZ_-Kw&oe=65592391" />
+
+<head>
+  <title>My Page</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+
+  <div class="profile">
+    <!-- Tab links -->
+    <div class="menu">
+      <div class="tab">
+        <button class="tablinks" onclick="openCity(event, 'home')"><i class="fa fa-home"></i></button>
+        <button class="tablinks" onclick="openCity(event, 'London')">Social network</button>
+        <button class="tablinks" onclick="openCity(event, 'Paris')">Paris</button>
+        <button class="tablinks" onclick="openCity(event, 'Khunglong')">Khủng Long ?</button>
+      </div>
+
+      <!-- Tab content -->
+      <div id="home">
+      </div>
+      <div id="London" class="tabcontent">
+        <h3>Social network</h3>
+        <p><a href="https://www.facebook.com/qncphomie" target=”_blank><i class="fa fa-facebook-official"></i></a></p>
+        <p><a href="https://www.youtube.com/@theanhdepptry0201/featured" target=”_blank></a><i
+            class="fa fa-youtube-play"></i></a></p>
+        <p></p>
+        <p></p>
+      </div>
+
+      <div id="Paris" class="tabcontent">
+        <h3>Paris</h3>
+        <p>Paris is the capital of France.</p>
+      </div>
+
+      <div id="Khunglong" class="tabcontent">
+        <div class="game">
+          <div id="dino"></div>
+          <div id="cactus"></div>
+          <br>
+        </div>
+      </div>
+    </div>
+    <!-- /// -->
+    <h1>Hover Me</h1>
+    <div class="infoHolder">
+      <h2>Hoàng Thế Anh</h2>
+      <p>
+        Lorem ipsum dolor sit amet, metus convallis ut malesuada, qui semper,
+        at non. Tincidunt donec aliquam vestibulum nisl. Pulvinar curabitur
+        tellus, a sed sit vitae morbi. Suscipit saepe et praesent aenean
+        laoreet, morbi justo pede eget, cras vestibulum, blandit mauris
+        dignissimos pharetra dui, ut enim mauris nec adipiscing blandit.
+      </p>
+    </div>
+
+    <div class="imageHolder">
+      <img class="profilePic"
+        src="https://scontent.fhan14-4.fna.fbcdn.net/v/t39.30808-1/239508366_2662132224090428_5088639679981924800_n.jpg?stp=dst-jpg_p160x160&_nc_cat=100&ccb=1-7&_nc_sid=5f2048&_nc_ohc=t5d9WwyNz9sAX9nsDIQ&_nc_ht=scontent.fhan14-4.fna&oh=00_AfCd_FpXPpa0pan1gclSHGmu4pgSNpfv9BR7SifXhKAHQw&oe=65574913" />
+    </div>
+  </div>
+
+
+</body>
+<script>
+  function openCity(evt, cityName) {
+    // Declare all variables
+    var i, tabcontent, tablinks;
+
+    // Get all elements with class="tabcontent" and hide them
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+    }
+
+    // Get all elements with class="tablinks" and remove the class "active"
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+
+    // Show the current tab, and add an "active" class to the button that opened the tab
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+  }
+</script>
+<script>
+  const dino = document.getElementById("dino");
+  const cactus = document.getElementById("cactus");
+
+  function jump() {
+    if (dino.classList != "jump") {
+      dino.classList.add("jump");
+
+      setTimeout(function () {
+        dino.classList.remove("jump");
+      }, 300);
+    }
+  }
+
+  let isAlive = setInterval(function () {
+    // get current dino Y position
+    let dinoTop = parseInt(window.getComputedStyle(dino).getPropertyValue("top"));
+
+    // get current cactus X position
+    let cactusLeft = parseInt(
+      window.getComputedStyle(cactus).getPropertyValue("left")
+    );
+
+    // detect collision
+    // if (cactusLeft < 50 && cactusLeft > 0 && dinoTop >= 140) {
+    //   alert("Game Over!");
+    // }
+  }, 10);
+
+  document.addEventListener("keydown", function (event) {
+    jump();
+  });
+
+</script>
+
+</html>
