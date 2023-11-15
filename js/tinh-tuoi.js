@@ -20,28 +20,28 @@ function ageCalculate() {
       countError++;
 
       switch (countError) {
-        case 0:
+        case 1:
           setMessage(age + ' là tuổi clgt???');
           break;
-        case 1:
+        case 2:
           setMessage('Đây là lần thứ 2 rồi nhưng bạn vẫn nhập sai.');
           break;
-        case 2:
+        case 3:
           setMessage(
             'Thật ra bạn chỉ bấm cái nút này cho vui thôi phải không?'
           );
           break;
-        case 3:
         case 4:
         case 5:
+        case 6:
           for (let i = 0; i <= countError; i++) {
             setMessage('đừng có nhấn nữa '.repeat(i));
           }
           break;
-        case 6:
+        case 7:
           setMessage('nhấn thêm lần nữa xem?');
           break;
-        case 7:
+        case 8:
           setMessage('chắc chưa?');
           document.getElementById('btn-submit').innerHTML = 'Chắc';
           break;
