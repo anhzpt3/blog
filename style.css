@@ -8,6 +8,7 @@
 html,
 body {
   background-image: url('https://images7.alphacoders.com/116/1161810.jpg');
+  background-size: cover;
   width: 100%;
   height: 100%;
   margin: 0;
@@ -65,10 +66,12 @@ body {
   animation: bounce 0.5s linear infinite;
   animation-play-state: paused;
 }
-.infoHolder_content{
-  color: #ffffff ;
+
+.infoHolder_content {
+  color: #ffffff;
 }
-a{
+
+a {
   text-decoration: none;
 }
 p a {
@@ -79,12 +82,13 @@ p a {
   margin-left: 1%;
 }
 
-#Paris div{
-  float: left; margin: 100px;
+#Paris div {
+  float: left;
+  margin: 100px;
 }
-.QRcode{
+.QRcode {
   width: 25%;
-  height: auto;;
+  height: auto;
 }
 .profile h1 {
   font-family: 'Fjalla One', sans-serif;
@@ -293,10 +297,8 @@ p a {
   position: relative;
   top: 110px;
   left: 580px;
-
-  background-image: url("img/cactus.png");
+  background-image: url('img/cactus.png');
   background-size: 20px 40px;
-
   animation: block 1s infinite linear;
 }
 
