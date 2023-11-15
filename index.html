@@ -13,98 +13,99 @@
   <div class="profile">
     <!-- Tab links -->
     <div class="menu">
-      <div class="tab">
-        <button class="tablinks" onclick="openCity(event, 'Home')">
+      <ul class="tab">
+        <li class="tab-menu" onclick="openTab(event, 'Home')">
           <i class="fa fa-home"></i>
-        </button>
-        <button class="tablinks" onclick="openCity(event, 'Social')">
+        </li>
+        <li class="tab-menu" onclick="openTab(event, 'Social')">
           Social network
-        </button>
-        <button class="tablinks" onclick="openCity(event, 'Paris')">
+        </li>
+        <li class="tab-menu" onclick="openTab(event, 'Paris')">
           Pay method
-        </button>
-        <button class="tablinks" onclick="openCity(event, 'Khunglong')">
+        </li>
+        <li class="tab-menu" onclick="openTab(event, 'Khunglong')">
           Công viên kỉ Jura
-        </button>
-        <button class="tablinks" onclick="openCity(event, 'Calculator')">
+        </li>
+        <li class="tab-menu" onclick="openTab(event, 'Calculator')">
           Máy tính tuổi thông minh
-        </button>
-      </div>
-      <!-- Tab content -->
-      <div id="Home">
-        <!-- // -->
-      </div>
-      <div id="Social" class="tabcontent">
-        <h3>Social network</h3>
-        <div class="Social_content">
-          <p>
-            <a href="https://www.facebook.com/qncphomie" target="”_blank">
-              <i class="fa fa-facebook-official"></i> FaceBook
-            </a>
-          </p>
-          <p>
-            <a href="https://www.youtube.com/@theanhdepptry0201/featured" target="”_blank">
-              <i class="fa fa-youtube-play"></i> Zootobe
-            </a>
-          </p>
-          <p>
-            <a href="https://github.com/anhzpt3" target="”_blank">
-              <i class="fa fa-github"></i> Github
-            </a>
-          </p>
-          <p>
-            <a href="https://steamcommunity.com/profiles/76561198442944138/" target="”_blank">
-              <i class="fa fa-steam-square"></i> Steam</a>
-          </p>
+        </li>
+      </ul>
+
+      <section class="content">
+        <!-- Tab content -->
+        <div id="Home">
         </div>
-      </div>
-
-      <div id="Paris" class="tabcontent">
-        <div>
-          <h3>Đang xài BIDV</h3>
-          <p>STK:2890367763 Hoàng Thế Anh</p>
+        <div id="Social" class="tab-content">
+          <h3>Social network</h3>
+          <div class="Social_content">
+            <p>
+              <a href="https://www.facebook.com/qncphomie" target="”_blank">
+                <i class="fa fa-facebook-official"></i> FaceBook
+              </a>
+            </p>
+            <p>
+              <a href="https://www.youtube.com/@theanhdepptry0201/featured" target="”_blank">
+                <i class="fa fa-youtube-play"></i> Zootobe
+              </a>
+            </p>
+            <p>
+              <a href="https://github.com/anhzpt3" target="”_blank">
+                <i class="fa fa-github"></i> Github
+              </a>
+            </p>
+            <p>
+              <a href="https://steamcommunity.com/profiles/76561198442944138/" target="”_blank">
+                <i class="fa fa-steam-square"></i> Steam</a>
+            </p>
+          </div>
         </div>
-        <img class="QRcode"
-          src="https://lh3.googleusercontent.com/pw/ADCreHdEVaKU1Sx1QaFXi0lLKRytYOJK9Aa2KyC3kSPSvTblTx50uHqvm7JYv6Xk9wfNDPPGpUBHPkFqHPXX2yxbTKv0GxG2aEQcBP5Z7cA_TAV3SMU14UY7sRj4b3TneSlpW2aghtEL8HdzZRQCXEmJ6wYk=w471-h941-s-no-gm?authuser=0"
-          alt="" />
-      </div>
 
-      <div id="Khunglong" class="tabcontent">
-        <div class="game">
-          <div id="dino"></div>
-          <div id="cactus"></div>
-          <br />
+        <div id="Paris" class="tab-content">
+          <div>
+            <h3>Đang xài BIDV</h3>
+            <p>STK:2890367763 Hoàng Thế Anh</p>
+          </div>
+          <img class="QRcode"
+            src="https://lh3.googleusercontent.com/pw/ADCreHdEVaKU1Sx1QaFXi0lLKRytYOJK9Aa2KyC3kSPSvTblTx50uHqvm7JYv6Xk9wfNDPPGpUBHPkFqHPXX2yxbTKv0GxG2aEQcBP5Z7cA_TAV3SMU14UY7sRj4b3TneSlpW2aghtEL8HdzZRQCXEmJ6wYk=w471-h941-s-no-gm?authuser=0"
+            alt="" />
         </div>
-      </div>
 
-      <div id="Calculator" class="tabcontent">
-        <h3>Máy tính tuổi thông minh (credit:ditmewibu.com)</h3>
-        <p>Nhập tuổi của bạn</p>
-        <input type="text" onfocus="this.value=''" onchange="resetCount()" id="input-age" />
+        <div id="Khunglong" class="tab-content">
+          <div style="height: 500px;">
+            <iframe id="dino-frame" src="./dino/index.html" frameborder="0" width="100%" height="100%"></iframe>
+          </div>
+        </div>
 
-        <p id="message"></p>
+        <div id="Calculator" class="tab-content">
+          <h3>Máy tính tuổi thông minh (credit:ditmewibu.com)</h3>
+          <p>Nhập tuổi của bạn</p>
+          <input type="text" onfocus="this.value=''" onchange="resetCount();" id="input-age" />
 
-        <button id="btn-submit" onclick="ageCalculate()">
-          Tính tuổi của bạn
-        </button>
-      </div>
+          <p id="message"></p>
+
+          <button id="btn-submit" onclick="ageCalculate();">
+            Tính tuổi của bạn
+          </button>
+        </div>
+      </section>
     </div>
-    <!-- /// -->
 
     <h1>Hover Me</h1>
     <div class="infoHolder">
-      <h2>Lời Nói Đầu</h2>
-      <p class="infoHolder_content">
-        Không thể nhầm được, đây đúng là webstatic của chúng tôi ( thực ra là
-        1 thằng ) tạo ra vì tôi đang rảnh vãi cl, mục đích đơn giản là làm up
-        những thứ nó thích với lượng kiến thức một mẩu về html và css, còn
-        đoạn text tiếp theo ai mà đọc thì đúng là vãi c. Lorem ipsum dolor sit
-        amet, metus convallis ut malesuada, qui semper, at non. Tincidunt
-        donec aliquam vestibulum nisl. Pulvinar curabitur tellus, a sed sit
-        vitae morbi. Suscipit saepe et praesent aenean laoreet, morbi justo
-        pede eget, cras vestibulum, blandit mauris dignissimos pharetra dui,
-        ut enim mauris nec adipiscing blandit.
-      </p>
+      <div class="wrapper">
+        <h2 class="infoHolder_title">Lời Nói Đầu</h2>
+        <p class="infoHolder_content">
+          Không thể nhầm được, đây đúng là webstatic của chúng tôi ( thực ra là
+          1 thằng ) tạo ra vì tôi đang rảnh vãi cl, mục đích đơn giản là làm up
+          những thứ nó thích với lượng kiến thức một mẩu về html và css, còn
+          đoạn text tiếp theo ai mà đọc thì đúng là vãi c. Lorem ipsum dolor sit
+          amet, metus convallis ut malesuada, qui semper, at non. Tincidunt
+          donec aliquam vestibulum nisl. Pulvinar curabitur tellus, a sed sit
+          vitae morbi. Suscipit saepe et praesent aenean laoreet, morbi justo
+          pede eget, cras vestibulum, blandit mauris dignissimos pharetra dui,
+          ut enim mauris nec adipiscing blandit.
+        </p>
+      </div>
     </div>
     <div class="imageHolder">
       <img class="profilePic"
@@ -114,7 +115,6 @@
 
 </body>
 <script type="text/javascript" src="./js/main.js"></script>
-<script type="text/javascript" src="./js/khung-long.js"></script>
 <script type="text/javascript" src="./js/tinh-tuoi.js"></script>
 
 </html>

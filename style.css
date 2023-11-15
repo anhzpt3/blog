@@ -67,6 +67,10 @@ body {
   animation-play-state: paused;
 }
 
+.infoHolder_title {
+  color: rgb(247, 194, 133);
+}
+
 .infoHolder_content {
   color: #ffffff;
 }
@@ -142,30 +146,30 @@ p a {
   overflow-x: hidden;
 }
 
-.profile .infoHolder h2 {
-  font-family: 'Fjalla One', sans-serif;
-  letter-spacing: 3px;
-  margin-top: 0px;
-  float: left;
-  width: 100%;
-  transform: translateX(102%);
+.profile .infoHolder .wrapper {
+  padding: 15px;
+  background-color: rgba(0, 0, 0, 0.35);
+  border-radius: 10px;
+  transform: translateX(105%);
   transition: all 0.5s ease;
   -webkit-transition: all 0.5s ease;
 }
 
-.profile .infoHolder p {
-  font-family: 'Roboto Slab', serif;
-  float: left;
-  margin-top: 0px;
-  width: 100%;
-  transform: translateX(102%);
-  transition: all 0.62s ease;
-  -webkit-transition: all 0.62s ease;
+.profile:hover .infoHolder .wrapper {
+  transform: translateX(0%);
 }
 
-.profile:hover .infoHolder h2,
-.profile:hover .infoHolder p {
-  transform: translateX(0%);
+.profile .infoHolder h2 {
+  font-family: 'Fjalla One', sans-serif;
+  letter-spacing: 3px;
+  margin-top: 0px;
+  width: 100%;
+}
+
+.profile .infoHolder p {
+  font-family: 'Roboto Slab', serif;
+  margin-top: 0px;
+  width: 100%;
 }
 
 @media screen and (min-width: 1080px) {
@@ -219,7 +223,7 @@ p a {
 }
 
 /* Style the buttons that are used to open the tab content */
-.tab button {
+.tab li {
   background-color: inherit;
   float: left;
   border: none;
@@ -227,25 +231,30 @@ p a {
   cursor: pointer;
   padding: 14px 16px;
   transition: 0.3s;
+  list-style-type: none;
 }
 
 /* Change background color of buttons on hover */
-.tab button:hover {
+.tab li:hover {
   background-color: #ddd;
 }
 
-/* Create an active/current tablink class */
-.tab button.active {
+/* Create an active/current tab-menu class */
+.tab li.active {
   background-color: #ccc;
 }
 
 /* Style the tab content */
-.tabcontent {
+.tab-content {
   background-color: #ddd;
   display: none;
   padding: 6px 12px;
   border: 1px solid #ccc;
   border-top: none;
+}
+
+.tab-content.active {
+  display: block;
 }
 
 /* //??? */
