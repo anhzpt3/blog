@@ -13,19 +13,21 @@ body {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  width: 100%;
-  height: 100%;
   margin: 0;
   padding: 0;
 }
 
+.container {
+  max-width: 1080px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
 .profile {
-  width: 1080px;
-  left: 50%;
-  float: left;
+  width: 100%;
   position: relative;
-  margin: 50px 0px 50px 0px;
-  margin-left: -540px;
+  margin-top: 150px;
   cursor: pointer;
 }
 
@@ -216,7 +218,9 @@ p a {
 
 /* //menu */
 .menu {
-  margin-bottom: 10%;
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 30px;
 }
 
 /* Style the tab */
@@ -224,6 +228,7 @@ p a {
   overflow: hidden;
   border: 1px solid #ccc;
   background-color: #f1f1f1;
+  margin: 0;
 }
 
 /* Style the buttons that are used to open the tab content */
