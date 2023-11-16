@@ -33,9 +33,18 @@
         <li class="tab-menu" onclick="openTab(event, 'Map')">
           Khám phá thế giới
         </li>
-        <li class="tab-menu" onclick="openTab(event, 'Game')">
-          Đang update
-        </li>
+
+        <div class="dropdown">
+          <button class="dropbtn" onclick="myFunction()">Đang update
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content" id="myDropdown">
+            <a href="javascript:void(0)" onclick="openTab(event, 'Color_Blast')">Game dành cho người mù màu</a>
+            <a href="javascript:void(0)" onclick="openTab(event, 'Tower_Blocks')">Chiến thần xếp gạch</a>
+            <a href="#">Link 3</a>
+          </div>
+        </div>
+
       </ul>
 
       <section class="content">
@@ -99,11 +108,18 @@
             height="600px" width="100%" frameBorder="0"></iframe>
         </div>
 
-        <div id="Game" class="tab-content">
-          <div style="height: 750px;">
+        <div id="Color_Blast" class="tab-content">
+          <div style="height: 800px;">
             <iframe src="./color_blast/index.html" frameborder="0" width="100%" height="100%"></iframe>
           </div>
         </div>
+
+        <div id="Tower_Blocks" class="tab-content">
+          <div style="height: 800px;">
+            <iframe src="./tower_blocks/index.html" frameborder="0" width="100%" height="100%"></iframe>
+          </div>
+        </div>
+
       </section>
     </div>
 
