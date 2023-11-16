@@ -3,15 +3,15 @@
 // © 2014 Nate Wiley
 
 (function (window) {
+  let isStarted = false;
 
   var Game = {
-
     init: function () {
-      this.c = document.getElementById("game");
+      this.c = document.getElementById('game');
       this.c.width = this.c.width;
       this.c.height = this.c.height;
-      this.ctx = this.c.getContext("2d");
-      this.color = "rgba(20,20,20,.7)";
+      this.ctx = this.c.getContext('2d');
+      this.color = 'rgba(20,20,20,.7)';
       this.bullets = [];
       this.enemyBullets = [];
       this.enemies = [];
@@ -33,7 +33,10 @@
       this.shooting = false;
       this.oneShot = false;
       this.isGameOver = false;
-      this.requestAnimationFrame = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame;
+      this.requestAnimationFrame =
+        window.requestAnimationFrame ||
+        window.webkitRequestAnimationFrame ||
+        window.mozRequestAnimationFrame;
       for (var i = 0; i < this.maxEnemies; i++) {
         new Enemy();
         this.enemiesAlive++;
@@ -44,10 +47,10 @@
     },
 
     binding: function () {
-      window.addEventListener("keydown", this.buttonDown);
-      window.addEventListener("keyup", this.buttonUp);
-      window.addEventListener("keypress", this.keyPressed);
-      this.c.addEventListener("click", this.clicked);
+      window.addEventListener('keydown', this.buttonDown);
+      window.addEventListener('keyup', this.buttonUp);
+      window.addEventListener('keypress', this.keyPressed);
+      this.c.addEventListener('click', this.clicked);
     },
 
     clicked: function () {
@@ -116,11 +119,11 @@
 
     collision: function (a, b) {
       return !(
-        ((a.y + a.height) < (b.y)) ||
-        (a.y > (b.y + b.height)) ||
-        ((a.x + a.width) < b.x) ||
-        (a.x > (b.x + b.width))
-      )
+        a.y + a.height < b.y ||
+        a.y > b.y + b.height ||
+        a.x + a.width < b.x ||
+        a.x > b.x + b.width
+      );
     },
 
     clear: function () {
@@ -136,27 +139,38 @@
       this.paused = false;
     },
 
-
     gameOver: function () {
       this.isGameOver = true;
       this.clear();
-      var message = "Game Over";
-      var message2 = "Score: " + Game.score;
-      var message3 = "Click or press Spacebar to Play Again";
+      var message = 'Game Over';
+      var message2 = 'Score: ' + Game.score;
+      var message3 = 'Click or press Spacebar to Play Again';
       this.pause();
-      this.ctx.fillStyle = "white";
-      this.ctx.font = "bold 30px Lato, sans-serif";
-      this.ctx.fillText(message, this.c.width / 2 - this.ctx.measureText(message).width / 2, this.c.height / 2 - 50);
-      this.ctx.fillText(message2, this.c.width / 2 - this.ctx.measureText(message2).width / 2, this.c.height / 2 - 5);
-      this.ctx.font = "bold 16px Lato, sans-serif";
-      this.ctx.fillText(message3, this.c.width / 2 - this.ctx.measureText(message3).width / 2, this.c.height / 2 + 30);
+      this.ctx.fillStyle = 'white';
+      this.ctx.font = 'bold 30px Lato, sans-serif';
+      this.ctx.fillText(
+        message,
+        this.c.width / 2 - this.ctx.measureText(message).width / 2,
+        this.c.height / 2 - 50
+      );
+      this.ctx.fillText(
+        message2,
+        this.c.width / 2 - this.ctx.measureText(message2).width / 2,
+        this.c.height / 2 - 5
+      );
+      this.ctx.font = 'bold 16px Lato, sans-serif';
+      this.ctx.fillText(
+        message3,
+        this.c.width / 2 - this.ctx.measureText(message3).width / 2,
+        this.c.height / 2 + 30
+      );
     },
 
     updateScore: function () {
-      this.ctx.fillStyle = "white";
-      this.ctx.font = "16px Lato, sans-serif";
-      this.ctx.fillText("Score: " + this.score, 8, 20);
-      this.ctx.fillText("Lives: " + (this.maxLives - this.life), 8, 40);
+      this.ctx.fillStyle = 'white';
+      this.ctx.font = '16px Lato, sans-serif';
+      this.ctx.fillText('Score: ' + this.score, 8, 20);
+      this.ctx.fillText('Lives: ' + (this.maxLives - this.life), 8, 40);
     },
 
     loop: function () {
@@ -193,14 +207,8 @@
         Game.updateScore();
         Game.currentFrame = Game.requestAnimationFrame.call(window, Game.loop);
       }
-    }
-
+    },
   };
-
-
-
-
-
 
   var Player = function () {
     this.width = 60;
@@ -211,9 +219,8 @@
     this.movingRight = false;
     this.speed = 8;
     this.invincible = false;
-    this.color = "white";
+    this.color = 'white';
   };
-
 
   Player.prototype.die = function () {
     if (Game.life < Game.maxLives) {
@@ -225,12 +232,10 @@
     }
   };
 
-
   Player.prototype.draw = function () {
     Game.ctx.fillStyle = this.color;
     Game.ctx.fillRect(this.x, this.y, this.width, this.height);
   };
-
 
   Player.prototype.update = function () {
     if (this.movingLeft && this.x > 0) {
@@ -251,16 +256,10 @@
     }
   };
 
-
   Player.prototype.shoot = function () {
     Game.bullets[Game.bulletIndex] = new Bullet(this.x + this.width / 2);
     Game.bulletIndex++;
   };
-
-
-
-
-
 
   var Bullet = function (x) {
     this.width = 8;
@@ -270,16 +269,13 @@
     this.vy = 8;
     this.index = Game.bulletIndex;
     this.active = true;
-    this.color = "white";
-
+    this.color = 'white';
   };
-
 
   Bullet.prototype.draw = function () {
     Game.ctx.fillStyle = this.color;
     Game.ctx.fillRect(this.x, this.y, this.width, this.height);
   };
-
 
   Bullet.prototype.update = function () {
     this.y -= this.vy;
@@ -288,33 +284,25 @@
     }
   };
 
-
-
-
-
-
   var Enemy = function () {
     this.width = 60;
     this.height = 20;
-    this.x = Game.random(0, (Game.c.width - this.width));
+    this.x = Game.random(0, Game.c.width - this.width);
     this.y = Game.random(10, 40);
-    this.vy = Game.random(1, 3) * .1;
+    this.vy = Game.random(1, 3) * 0.1;
     this.index = Game.enemyIndex;
     Game.enemies[Game.enemyIndex] = this;
     Game.enemyIndex++;
     this.speed = Game.random(2, 3);
     this.shootingSpeed = Game.random(30, 80);
     this.movingLeft = Math.random() < 0.5 ? true : false;
-    this.color = "hsl(" + Game.random(0, 360) + ", 60%, 50%)";
-
+    this.color = 'hsl(' + Game.random(0, 360) + ', 60%, 50%)';
   };
-
 
   Enemy.prototype.draw = function () {
     Game.ctx.fillStyle = this.color;
     Game.ctx.fillRect(this.x, this.y, this.width, this.height);
   };
-
 
   Enemy.prototype.update = function () {
     if (this.movingLeft) {
@@ -353,7 +341,6 @@
         new Enemy();
       }, 2000);
     }
-
   };
 
   Enemy.prototype.explode = function () {
@@ -390,29 +377,26 @@
     }
   };
 
-
-
-
   var Particle = function (x, y, color) {
     this.x = x;
     this.y = y;
     this.vx = Game.random(-5, 5);
     this.vy = Game.random(-5, 5);
-    this.color = color || "orange";
+    this.color = color || 'orange';
     Game.particles[Game.particleIndex] = this;
     this.id = Game.particleIndex;
     Game.particleIndex++;
     this.life = 0;
-    this.gravity = .05;
+    this.gravity = 0.05;
     this.size = 40;
     this.maxlife = 100;
-  }
+  };
 
   Particle.prototype.draw = function () {
     this.x += this.vx;
     this.y += this.vy;
     this.vy += this.gravity;
-    this.size *= .89;
+    this.size *= 0.89;
     Game.ctx.fillStyle = this.color;
     Game.ctx.fillRect(this.x, this.y, this.size, this.size);
     this.life++;
@@ -421,7 +405,27 @@
     }
   };
 
-  Game.init();
+  const btnAction = document.getElementById('btn-action');
 
-
-}(window));
+  btnAction.addEventListener('click', function () {
+    if (!isStarted) {
+      Game.init();
+      isStarted = true;
+      btnAction.innerText = 'Pause';
+    } else {
+      if (Game.isGameOver) {
+        Game.init();
+      } else {
+        if (Game.paused) {
+          Game.unPause();
+          Game.loop();
+          Game.invincibleMode(1000);
+          btnAction.innerText = 'Play';
+        } else {
+          Game.pause();
+          btnAction.innerText = 'Paused';
+        }
+      }
+    }
+  });
+})(window);

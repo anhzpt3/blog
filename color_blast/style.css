@@ -121,3 +121,13 @@ a:hover {
 .title span:nth-child(11) {
   color: #bf4080;
 }
+
+#btn-action {
+  background: pink;
+  margin: 0 auto;
+  padding: 8px 20px;
+  border-radius: 5px;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
