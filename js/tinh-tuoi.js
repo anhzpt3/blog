@@ -47,7 +47,7 @@ function ageCalculate() {
           break;
 
         default:
-          // các case còn lại (>7)
+          // các case còn lại (>8)
           window.location.href = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ';
       }
     }

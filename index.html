@@ -29,6 +29,9 @@
         <li class="tab-menu" onclick="openTab(event, 'Calculator')">
           Máy tính tuổi thông minh
         </li>
+        <li class="tab-menu" onclick="openTab(event, 'Map')">
+          Khám phá thế giới
+        </li>
       </ul>
 
       <section class="content">
@@ -86,6 +89,12 @@
           <button id="btn-submit" onclick="ageCalculate();">
             Tính tuổi của bạn
           </button>
+        </div>
+
+        <div id="Map" class="tab-content">
+          <iframe
+            src="https://act.hoyolab.com/ys/app/interactive-map/index.html?lang=vi-vn#/map/2?shown_types=488,489,490,410,521,3,154,549,2&center=-833.73,-4996.59&zoom=-0.50"
+            height="600px" width="100%" frameBorder="0"></iframe>
         </div>
       </section>
     </div>
