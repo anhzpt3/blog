@@ -16,6 +16,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="apple-mobile-web-app-title" content="theanhdeptrai">
   <meta name="application-name" content="theanhdeptrai">
+  <meta name="description"
+    content="Không thể nhầm được, đây đúng là web static của chúng tôi ( thực ra là 1 thằng và ông Hoàng depzai ) tạo ra vì tôi đang rảnh vãi cl">
 
   <meta property="og:title" content="website của theanhdeptrai" />
   <meta property="og:description"
@@ -66,12 +68,12 @@
           <button class="dropbtn" onclick="myFunction()">Đang update
             <i class="fa fa-caret-down"></i>
           </button>
-          <div class="dropdown-content" id="myDropdown">
-            <a href="javascript:void(0)" onclick="openTab(event, 'Color_Blast')">Game dành cho người mù màu</a>
-            <a href="javascript:void(0)" onclick="openTab(event, 'Tower_Blocks')">Chiến thần xếp gạch</a>
-            <a href="javascript:void(0)" onclick="openTab(event, 'Khunglong')">Công viên kỷ Jura</a>
-            <a href="javascript:void(0)" onclick="openTab(event, 'Calculator')">Máy tính tuổi thông minh</a>
-          </div>
+          <ul class="dropdown-content" id="myDropdown">
+            <li onclick="openTab(event, 'Color_Blast')">Game dành cho người mù màu</li>
+            <li onclick="openTab(event, 'Tower_Blocks')">Chiến thần xếp gạch</li>
+            <li onclick="openTab(event, 'Khunglong')">Công viên kỷ Jura</li>
+            <li onclick="openTab(event, 'Calculator')">Máy tính tuổi thông minh</li>
+          </ul>
         </div>
 
       </ul>
@@ -132,7 +134,8 @@
         </div>
 
         <div id="Map" class="tab-content">
-          <iframe src="https://genshin-impact-map.appsample.com/" height="750px" width="120%" frameBorder="0"></iframe>
+          <iframe src="https://genshin-impact-map.appsample.com/" height="750px" width="120%" frameBorder="0"
+            loading="lazy"></iframe>
         </div>
 
         <div id="Enka" class="tab-content">
@@ -140,7 +143,7 @@
             Thằng chủ web Genshin uid :803862988
             Hsr uid : 800327839
           </p>
-          <iframe src="https://enka.network/" height="700px" width="100%" frameBorder="0"></iframe>
+          <iframe src="https://enka.network/" height="700px" width="100%" frameBorder="0" loading="lazy"></iframe>
         </div>
 
         <div id="Color_Blast" class="tab-content">
@@ -176,7 +179,7 @@
         </div>
       </div>
       <div class="imageHolder">
-        <img class="profilePic" src="https://pbs.twimg.com/media/FEP3YlkVUAE18DR?format=png&name=small" />
+        <img class="profilePic" src="./img/avatar.png" alt="avatar" />
       </div>
     </div>
   </div>
