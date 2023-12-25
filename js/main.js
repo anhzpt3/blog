@@ -38,7 +38,7 @@ window.addEventListener('keydown', function (e) {
 
 /* When the user clicks on the button, 
 toggle between hiding and showing the dropdown content */
-function myFunction() {
+function toggleDropdown() {
   document.getElementById('myDropdown').classList.toggle('show');
 }
 

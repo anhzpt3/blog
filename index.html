@@ -65,14 +65,14 @@
         </li>
 
         <div class="dropdown">
-          <button class="dropbtn" onclick="myFunction()">Đang update
+          <button class="dropbtn" onclick="toggleDropdown()">Đang update
             <i class="fa fa-caret-down"></i>
           </button>
           <ul class="dropdown-content" id="myDropdown">
-            <li onclick="openTab(event, 'Color_Blast')">Game dành cho người mù màu</li>
-            <li onclick="openTab(event, 'Tower_Blocks')">Chiến thần xếp gạch</li>
-            <li onclick="openTab(event, 'Khunglong')">Công viên kỷ Jura</li>
-            <li onclick="openTab(event, 'Calculator')">Máy tính tuổi thông minh</li>
+            <li class="tab-menu" onclick="openTab(event, 'Color_Blast')">Game dành cho người mù màu</li>
+            <li class="tab-menu" onclick="openTab(event, 'Tower_Blocks')">Chiến thần xếp gạch</li>
+            <li class="tab-menu" onclick="openTab(event, 'Khunglong')">Công viên kỷ Jura</li>
+            <li class="tab-menu" onclick="openTab(event, 'Calculator')">Máy tính tuổi thông minh</li>
           </ul>
         </div>
 
@@ -86,12 +86,12 @@
           <h3>Social network</h3>
           <div class="Social_content">
             <p>
-              <a href="https://www.facebook.com/qncphomie" target="”_blank">
+              <a href="https://www.facebook.com/qncphomie" target="_blank">
                 <i class="fa fa-facebook-official"></i> FaceBook
               </a>
             </p>
             <p>
-              <a href="https://www.youtube.com/@theanhdepptry0201/featured" target="”_blank">
+              <a href="https://www.youtube.com/@theanhdepptry0201/featured" target="_blank">
                 <i class="fa fa-youtube-play"></i> Zootobe
               </a>
             </p>
@@ -101,7 +101,7 @@
               </a>
             </p>
             <p>
-              <a href="https://steamcommunity.com/profiles/76561198442944138/" target="”_blank">
+              <a href="https://steamcommunity.com/profiles/76561198442944138/" target="_blank">
                 <i class="fa fa-steam-square"></i> Steam</a>
             </p>
           </div>
@@ -114,7 +114,7 @@
           </div>
           <img class="QRcode"
             src="https://lh3.googleusercontent.com/pw/ADCreHdEVaKU1Sx1QaFXi0lLKRytYOJK9Aa2KyC3kSPSvTblTx50uHqvm7JYv6Xk9wfNDPPGpUBHPkFqHPXX2yxbTKv0GxG2aEQcBP5Z7cA_TAV3SMU14UY7sRj4b3TneSlpW2aghtEL8HdzZRQCXEmJ6wYk=w471-h941-s-no-gm?authuser=0"
-            alt="" />
+            alt="">
         </div>
 
         <div id="Khunglong" class="tab-content">
@@ -134,7 +134,7 @@
         </div>
 
         <div id="Map" class="tab-content">
-          <iframe src="https://genshin-impact-map.appsample.com/" height="750px" width="120%" frameBorder="0"
+          <iframe src="https://genshin-impact-map.appsample.com/" height="750px" width="120%" frameborder="0"
             loading="lazy"></iframe>
         </div>
 
@@ -143,7 +143,7 @@
             Thằng chủ web Genshin uid :803862988
             Hsr uid : 800327839
           </p>
-          <iframe src="https://enka.network/" height="700px" width="100%" frameBorder="0" loading="lazy"></iframe>
+          <iframe src="https://enka.network/" height="700px" width="100%" frameborder="0" loading="lazy"></iframe>
         </div>
 
         <div id="Color_Blast" class="tab-content">
@@ -157,6 +157,7 @@
             <iframe src="./game/tower-blocks/index.html" frameborder="0" width="100%" height="100%"></iframe>
           </div>
         </div>
+
       </section>
     </div>
 
@@ -188,7 +189,9 @@
         <div class="inner">❅</div>
       </div>
       <div class="snowflake">
-        <div class="inner">❅</div>
+        <div class="inner">
+          <img src="/img/klee-bomb-lg.png" width="120" alt="">
+        </div>
       </div>
       <div class="snowflake">
         <div class="inner">❅</div>
@@ -203,7 +206,9 @@
         <div class="inner">❅</div>
       </div>
       <div class="snowflake">
-        <div class="inner">❅</div>
+        <div class="inner">
+          <img src="/img/klee-bomb-sm.png" width="60" alt="">
+        </div>
       </div>
       <div class="snowflake">
         <div class="inner">❅</div>
